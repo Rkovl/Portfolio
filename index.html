@@ -55,21 +55,57 @@
 
   <div class="nav-container">
     <a href="#body" class="nav-tab">HOME</a>
-    <a href="#tab-svelte" class="nav-tab">ABOUT ME</a>
-    <a href="#tab-esbuild" class="nav-tab">SKILLS</a>
-    <a href="#tab-next" class="nav-tab">PORTFOLIO</a> 
-    <a href="#tab-typescript" class="nav-tab">CONTACT</a>
+    <a href="#tab-aboutMe" class="nav-tab">ABOUT ME</a>
+    <a href="#tab-skills" class="nav-tab">SKILLS</a>
+    <a href="#tab-portfolio" class="nav-tab">PORTFOLIO</a> 
+    <a href="#tab-contact" class="nav-tab">CONTACT</a>
     <span class="nav-tab-slider"></span>
 </div>
 </div> 
 <main class="main container"></main>
-  <section id="tab-svelte" class="slider">
+
+
+
+  <section id="tab-aboutMe" class="slider">
+    
     <h2>ABOUT ME</h2> 
-    <div class="container">
-        <h3>Well-qualified Full Stack Developer familiar with wide range of programming utilities and languages. Knowledgeable in back-end and front-end development as a collaborative team player with excellent technical abilities.</h3> 
+    <div class="container justify-content-center">
+        <div class="card">
+            <div class="card-about-me">
+              <div class="line-numbers">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+
+
+            </div><code><span class="variable">const </span><span class="function">aboutMe </span><span class="operator">=</span><span> {</span>
+                <div class="indent"> <span class="property">name</span><span class="operator">:</span><span class="string">'Ryan Kovlaske'</span><span>,</span></div>
+                <div class="indent"> <span class="property">description</span><span class="operator">:</span><span class="string">'Well-qualified Full Stack Developer familiar with wide range of programming utilities and languages. Knowledgeable in back-end and front-end development as a collaborative team player with excellent technical abilities.'</span><span>,</span></div>
+
+                  <div class="indent"> <span class="property">email</span><span class="operator">:</span><span class="string">'ryan.kovlaske@gmail.com'</span><span>,</span></div>
+                  <div class="indent"><span class="property">website</span><span class="operator">:</span><span class="string">'https://ryankovlaske.netlify.app'</span></div><span>}</span>
+                </div></code>
+            </div>
+          </div>
+        <!-- <div class="row">
+            <div class="col-6 ">
+                <h3>Well-qualified Full Stack Developer familiar with wide range of programming utilities and languages. Knowledgeable in back-end and front-end development as a collaborative team player with excellent technical abilities.</h3> 
+            </div>
+            
+            <div class="col-6"><img src="./pictures/me.jpg" alt="" width="400px" id="me"></div>
+        </div> -->
     </div>
 </section>
-  <section id="tab-esbuild" class="slider">
+  <section id="tab-skills" class="slider">
     <div class="container">
         <h2 class="m-5">SKILLS</h2> 
             
@@ -129,7 +165,7 @@
 
     </div>
 </section>
-  <section id="tab-next" class="slider">
+  <section id="tab-portfolio" class="slider">
     <h2>PORTFOLIO</h2> 
 
     <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
@@ -301,7 +337,7 @@
     </div>
 
 </section>
-  <section id="tab-typescript" class="slider">
+  <section id="tab-contact" class="slider">
     <h2>CONTACT ME</h2> 
     <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js?pre=1"></script>
     <script>

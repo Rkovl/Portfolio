@@ -146,6 +146,10 @@
     text-align: center;
     padding: 0 2em;
   }
+  .slider#tab-aboutMe,
+  .slider#tab-portfolio{
+    background-color: #2a2a33;
+  }
   
   /* .nav{
     height: 100vh;
@@ -174,6 +178,7 @@
     font-weight: 300;
     color: white;
     z-index: 4;
+    margin: 10px;
   }
   
   a {
@@ -293,6 +298,7 @@
     width: 100%;
     height: 100%;
     border-radius: 24px;
+    outline: solid white;
   
     background: var(--dark);
     position: absolute;
@@ -339,6 +345,10 @@
   img {
     height: 100%;
     border-radius: 24px;
+  }
+  img#me{
+    height: auto;
+    border-radius: 200%;
   }
   
   /* figcaption */
@@ -536,4 +546,122 @@
 .hbspt-form {
   color: white;
   
+}
+
+/* ------------------------------------------------ */
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  font-smooth: auto;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #444;
+}
+
+
+code, .card .line-numbers {
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 24px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 30rem;
+  perspective: 150rem;
+}
+.card-about-me {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  border-radius: 5px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  transition: 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+.card-about-me:before, .card-about-me:after {
+  position: absolute;
+}
+.card-about-me:before{
+  top: -40px;
+  right: -40px;
+  content: "";
+  width: 80px;
+  height: 80px;
+  background-color: rgba(255, 255, 255, 0.08);
+  transform: rotate(45deg);
+  z-index: 1;
+}
+.card-about-me:after{
+  content: "+";
+  top: 0;
+  right: 10px;
+  font-size: 24px;
+  transform: rotate(45deg);
+  z-index: 2;
+}
+.card-about-me {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #101010, #2c3e50);
+}
+.card-about-me:after {
+  color: #212f3c;
+}
+
+.card .line-numbers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0;
+  padding: 0 10px;
+  background-color: rgba(255, 255, 255, 0.03);
+  font-size: 23px;
+}
+.card .line-numbers > div {
+  padding: 2.5px 0;
+  opacity: 0.15;
+}
+.card code, .card .line-numbers {
+  color: whitesmoke;
+}
+.card .indent {
+  padding-left: 30px;
+}
+.card .operator {
+  color: #4dd0e1;
+}
+.card .string {
+  color: #9ccc65;
+}
+.card .variable {
+  color: #BA68C8;
+}
+.card .property {
+  color: #ef5350;
+}
+.card .method {
+  color: #29b6f6;
+}
+.card .function {
+  color: #FDD835;
+}
+.card .boolean {
+  color: #4dd0e1;
 }
