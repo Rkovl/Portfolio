@@ -700,7 +700,9 @@ code, .card .line-numbers {
     font-size: 10px;
   }
 }
-.flip-card {
+
+.flip-card-container:active .flip-card {
+  transform: rotateY(180deg);
   width: inherit;
   height: inherit;
 
