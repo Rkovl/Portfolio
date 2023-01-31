@@ -376,7 +376,7 @@
   
   /* .img-bg */
   .img-bg {
-    background: hsla(var(--hue), 25%, 10%, .5);
+    background: hsla(var(--hue), 50%, 10%, .9);
   }
   
   .card-front .img-bg {
