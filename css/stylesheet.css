@@ -2,8 +2,28 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Lora";
   }
-  
+
+h1{
+  font-family: "Roboto";
+}
+/* .card-about-me *{
+  font-family: "Roboto";
+} */
+h2{
+  font-family: "Kaisei HarunoUmi";
+}
+.nav-tab{
+  font-family: "Kaisei HarunoUmi";
+}
+
+.font-card{
+  font-size: large;
+}
+.hidden{
+  visibility: hidden;
+}
 /* ------------------------------------------------------------------------------------------------ */
 
   h1::before {  
@@ -36,7 +56,6 @@
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
-    font-family: monospace;
     font-size: 2em;
   }
   
@@ -57,6 +76,7 @@
   .header {
     width: 300px;
     padding: 0 16px;
+    
     display: flex;
     border: 1px solid white;
     border-radius: 16px;
@@ -125,9 +145,6 @@
 
   /* ------------------------------------------------------------------------------------------ */
 
-  body {
-    font-family: "ROBOTO", sans-serif;
-  }
 
   h3 {
     color: white;
@@ -157,7 +174,7 @@
 
   .nav h1,
   .slider h1 {
-    font-family: "Josefin Sans", sans-serif;
+    
     font-size: 5vw;
     margin: 0;
     padding-bottom: 0.5rem;
@@ -174,7 +191,7 @@
   .slider h2 {
     font-size: 2vw;
     letter-spacing: 0.3rem;
-    font-family: "ROBOTO", sans-serif;
+    
     font-weight: 300;
     color: white;
     z-index: 4;
@@ -192,9 +209,10 @@
     bottom: 0;
     width: 100%;
     height: 75px;
-    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-    background: #1e1f26;
+    /* box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5); */
+    background: #121316;
     z-index: 10;
+    
     
   }
   
@@ -210,14 +228,20 @@
     flex: 1;
     color: white;
     letter-spacing: 0.1rem;
+    background: #121316;
+    /* height: 75px; */
     transition: all 0.5s ease;
     font-size: 2vw;
+    padding: 10px;
+    
   }
   
   .nav-tab:hover {
-    color: #1e1f26;
+    color: #121316;
     background: white;
     transition: all 0.5s ease;
+    border: white;
+    border-width: 2px;
   }
   
   .nav-tab-slider {
@@ -260,6 +284,27 @@
 
 
   /* ---------------------------------------------------------------------- */
+
+  .card-image{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .card {
+    color: white;
+    background-color: #2a2a33
+    /* background: linear-gradient(45deg, #101010, #2c3e50); */
+  }
+
+  .hover-button{
+    transition-duration: 0.4s;
+    color: white;
+
+  }
+  .hover-button:hover{
+    color: #2a2a33;
+    background-color: white;
+  }
 
   .flip-card-container {
     --hue: 150;
@@ -480,7 +525,7 @@
     left: 20px;
     color: hsla(0, 0%, 100%, .6);
     font-size: 16px;
-    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    
   }
 
   /* @media screen only (min-width: 360px) {
@@ -557,7 +602,7 @@
 }
 
 html {
-  font-family: "Source Sans Pro", sans-serif;
+  
   font-size: 16px;
   font-smooth: auto;
   font-weight: 300;
@@ -567,7 +612,7 @@ html {
 
 
 code, .card .line-numbers {
-  font-family: "Lucida Console", Monaco, monospace;
+  
   font-size: 24px;
 }
 
@@ -576,6 +621,7 @@ code, .card .line-numbers {
   width: 100%;
   height: 30rem;
   perspective: 150rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
 }
 .card-about-me {
   position: absolute;
@@ -586,7 +632,6 @@ code, .card .line-numbers {
   justify-content: center;
   margin: auto;
   border-radius: 5px;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
   transition: 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
   backface-visibility: hidden;
   overflow: hidden;
@@ -648,7 +693,7 @@ code, .card .line-numbers {
   .slider h2 {
     font-size: 10vw;
     letter-spacing: 0.3rem;
-    font-family: "ROBOTO", sans-serif;
+    
     font-weight: 300;
     color: white;
     z-index: 4;
@@ -672,11 +717,11 @@ code, .card .line-numbers {
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
-    font-family: monospace;
+    
     font-size: 2em;
   }
   code, .card .line-numbers {
-    font-family: "Lucida Console", Monaco, monospace;
+    
     font-size: 11px;
   }
   .card {
