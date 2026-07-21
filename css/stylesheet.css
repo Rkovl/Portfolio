@@ -164,7 +164,6 @@ h1.typingDemo {
 	background-color: transparent;
 }
 
-
 .spacer {
 	flex-grow: 1;
 }
@@ -174,6 +173,18 @@ h1.typingDemo {
 	height: 36px;
 	margin: 24px 18px;
 	background-color: var(--colorWhite);
+}
+
+.visuallyHidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
 }
 
 /* ==========================================================================
@@ -567,7 +578,7 @@ code,
 }
 
 /* ==========================================================================
-   Responsive
+   Media Queries
    ========================================================================== */
 
 @media (min-width: 800px) {
@@ -605,5 +616,39 @@ code,
 
 	.card .lineNumbers {
 		font-size: 10px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	h1.typingDemo {
+		width: auto;
+		animation: none;
+		border-right: none;
+		white-space: normal;
+		overflow: visible;
+	}
+
+	.typingDemo::before,
+	.typingDemo:hover::before {
+		transition: none;
+	}
+
+	.iconDiv,
+	.iconDiv:hover,
+	.iconDiv:focus-visible {
+		transition: none;
+	}
+
+	.flipCard,
+	.flipCardContainer:hover .flipCard,
+	.flipCardContainer:focus-within .flipCard,
+	.flipCardContainer:active .flipCard {
+		transition: none;
+	}
+
+	.navTab,
+	.cardAboutMe,
+	.cardBack button {
+		transition: none;
 	}
 }
