@@ -1,17 +1,12 @@
-window.onscroll = function() {myFunction()};
+const navBar = document.querySelector(".navContainer");
+const stickyOffset = navBar.offsetTop;
 
+function updateNavOnScroll() {
+	if (window.pageYOffset >= stickyOffset) {
+		navBar.classList.add("navContainer--scrolled");
+	} else {
+		navBar.classList.remove("navContainer--scrolled");
+	}
+}
 
-var navbar = document.querySelector(".nav-container");
-
-
-var sticky = navbar.offsetTop;
-
-
-
-function myFunction() {
-    if (window.pageYOffset >= sticky) {
-      navbar.classList.add("nav-container--scrolled")
-    } else {
-      navbar.classList.remove("nav-container--scrolled");
-    }
-  } 
+window.onscroll = updateNavOnScroll;
