@@ -73,10 +73,10 @@ section {
 }
 
 /* ==========================================================================
-   Name animation
+   Name Animation
    ========================================================================== */
 
-h1::before {
+.typingDemo::before {
 	content: " ";
 	display: block;
 	position: absolute;
@@ -88,9 +88,14 @@ h1::before {
 	transition: transform 0.3s ease;
 }
 
-h1:hover::before {
+.typingDemo:hover::before {
 	transform: scaleX(1);
 	transform-origin: bottom left;
+}
+
+.typingDemo:hover {
+	transform: translate3d(0, -10px, 22px);
+	color: var(--colorBgDark);
 }
 
 h1.typingDemo {
@@ -107,7 +112,7 @@ h1.typingDemo {
    Social links
    ========================================================================== */
 
-.header {
+.socialLinks {
 	width: 300px;
 	padding: 0 16px;
 	display: flex;
@@ -159,10 +164,6 @@ h1.typingDemo {
 	background-color: transparent;
 }
 
-.header:has(.iconDiv:not(.iconDivPlain):hover) .iconDivPlain,
-.header:has(.iconDiv:not(.iconDivPlain):focus-visible) .iconDivPlain {
-	width: 36px;
-}
 
 .spacer {
 	flex-grow: 1;
@@ -176,11 +177,10 @@ h1.typingDemo {
 }
 
 /* ==========================================================================
-   Sections / slider
+   Page Sections
    ========================================================================== */
 
-.nav,
-.slider {
+.pageSection {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -192,13 +192,11 @@ h1.typingDemo {
 	background-color: var(--colorBgDark);
 }
 
-.slider#tabAboutMe,
-.slider#tabPortfolio {
+.pageSection--alt {
 	background-color: var(--colorBgMid);
 }
 
-.nav h1,
-.slider h1 {
+.pageSection h1 {
 	margin: 0;
 	padding-bottom: 0.5rem;
 	letter-spacing: 0.5rem;
@@ -209,7 +207,7 @@ h1.typingDemo {
 	z-index: 3;
 }
 
-.slider h2 {
+.pageSection h2 {
 	margin: 10px;
 	color: var(--colorWhite);
 	font-family: var(--fontBody);
@@ -217,11 +215,6 @@ h1.typingDemo {
 	font-weight: 300;
 	letter-spacing: 0.3rem;
 	z-index: 4;
-}
-
-h1:hover {
-	transform: translate3d(0, -10px, 22px);
-	color: var(--colorBgDark);
 }
 
 /* ==========================================================================
@@ -271,7 +264,7 @@ h1:hover {
 }
 
 /* ==========================================================================
-   About me
+   About Me Card
    ========================================================================== */
 
 code,
@@ -578,8 +571,7 @@ code,
    ========================================================================== */
 
 @media (min-width: 800px) {
-	.nav h2,
-	.slider h2 {
+	.pageSection h2 {
 		font-size: 3vw;
 	}
 
@@ -589,7 +581,7 @@ code,
 }
 
 @media (max-width: 800px) {
-	.slider h2 {
+	.pageSection h2 {
 		font-size: 10vw;
 	}
 
