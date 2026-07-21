@@ -47,7 +47,7 @@
 }
 
 /* ==========================================================================
-   Reset & base
+   Base
    ========================================================================== */
 
 * {
@@ -73,7 +73,7 @@ section {
 }
 
 /* ==========================================================================
-   Typography
+   Name animation
    ========================================================================== */
 
 h1::before {
@@ -93,11 +93,6 @@ h1:hover::before {
 	transform-origin: bottom left;
 }
 
-h1:hover {
-	transform: translate3d(0, -10px, 22px);
-	color: var(--colorBgDark);
-}
-
 h1.typingDemo {
 	width: 18ch;
 	animation: typing 2s steps(24), blink 0.5s step-end infinite alternate;
@@ -109,7 +104,7 @@ h1.typingDemo {
 }
 
 /* ==========================================================================
-   Site header / social links
+   Social links
    ========================================================================== */
 
 .header {
@@ -159,6 +154,16 @@ h1.typingDemo {
 	animation: fadeIn 600ms linear forwards;
 }
 
+.iconDivPlain {
+	width: 145px;
+	background-color: transparent;
+}
+
+.header:has(.iconDiv:not(.iconDivPlain):hover) .iconDivPlain,
+.header:has(.iconDiv:not(.iconDivPlain):focus-visible) .iconDivPlain {
+	width: 36px;
+}
+
 .spacer {
 	flex-grow: 1;
 }
@@ -171,7 +176,7 @@ h1.typingDemo {
 }
 
 /* ==========================================================================
-   Page sections / slider
+   Sections / slider
    ========================================================================== */
 
 .nav,
@@ -212,6 +217,11 @@ h1.typingDemo {
 	font-weight: 300;
 	letter-spacing: 0.3rem;
 	z-index: 4;
+}
+
+h1:hover {
+	transform: translate3d(0, -10px, 22px);
+	color: var(--colorBgDark);
 }
 
 /* ==========================================================================
@@ -261,7 +271,7 @@ h1.typingDemo {
 }
 
 /* ==========================================================================
-   About me card
+   About me
    ========================================================================== */
 
 code,
