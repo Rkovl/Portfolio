@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="./css/stylesheet.css">
 </head>
 
-<body id="body">
+<body id="pageBody">
 
 	<header class="pageSection">
 		<h1 class="typingDemo">RYAN KOVLASKE</h1>
@@ -45,7 +45,7 @@
 		</div>
 
 		<nav class="navContainer">
-			<a href="#body" class="navTab">HOME</a>
+			<a href="#pageBody" class="navTab">HOME</a>
 			<a href="#tabAboutMe" class="navTab">ABOUT ME</a>
 			<a href="#tabSkills" class="navTab">SKILLS</a>
 			<a href="#tabPortfolio" class="navTab">PORTFOLIO</a>
@@ -54,7 +54,7 @@
 	</header>
 
 	<main>
-	<section id="tabAboutMe" class="pageSection pageSection--alt">
+	<section id="tabAboutMe" class="pageSection pageSectionAlt">
 		<h2>ABOUT ME</h2>
 		<div class="container justify-content-center">
 			<div class="card">
@@ -172,213 +172,110 @@
 		</div>
 	</section>
 
-	<section id="tabPortfolio" class="pageSection pageSection--alt">
-		<h2>PORTFOLIO</h2>
+	<section id="tabPortfolio" class="pageSection pageSectionAlt">
+		<div class="container py-4">
+			<h2>PORTFOLIO</h2>
 
-		<div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+			<div class="projectsGrid mt-4">
 
-			<div class="flipCardContainer col-12 col-md-6 col-xl-4" style="--hue: 10">
-				<div class="flipCard">
-					<div class="cardFront">
-						<figure>
-							<div class="imgBg"></div>
-							<img src="./pictures/beauti_bodega3.png" alt="Beauti Bodega">
-							<figcaption>Beauti Bodega</figcaption>
-						</figure>
-						<ul>
-							<li>Beauti Bodega is a mobile first shopping application targeted towards companies who sell beauty products, as well as their customers.</li>
-							<li>The project was built with TypeScript, React and Express for our frontend and backend. We used Firebase our image database and used Sequelize and ElephantSQL for all other data. All passwords are secured using Passport.js and Bcrypt.</li>
-						</ul>
+				<article class="portfolioCard" style="--hue: 10">
+					<div class="cardImageWrapper">
+						<div class="imgBg"></div>
+						<img src="./pictures/beauti_bodega3.png" alt="Beauti Bodega">
+						<div class="cardBadge">Oct, 2022</div>
 					</div>
-					<div class="cardBack" aria-hidden="true">
-						<figure>
-							<div class="imgBg"></div>
-							<img src="./pictures/beauti_bodega3.png" alt="Beauti Bodega">
-						</figure>
-						<a href="https://github.com/sharnee/beautibodega-v0" target="_blank" rel="noopener noreferrer"><button>GitHub</button>
-							<span class="visuallyHidden">(opens in a new tab)</span>
-						</a>
+
+					<div class="cardBody">
+						<h3 class="cardTitle">Beauti Bodega</h3>
+
+						<div class="techTags">
+							<span class="tag">TypeScript</span>
+							<span class="tag">React</span>
+							<span class="tag">Express</span>
+							<span class="tag">Sequelize</span>
+							<span class="tag">PostgreSQL</span>
+						</div>
+
+						<p class="cardDesc">
+							A mobile-first e-commerce and social networking application for beauty brands and customers. Implemented user authentication, role-based access for shoppers and brand administrators, product management, shopping cart functionality, and secure password handling.
+						</p>
+
+						<div class="cardActions">
+							<a href="https://github.com/sharnee/beautibodega-v0" target="_blank" rel="noopener noreferrer" class="cardBtn" hidden>
+								<i class="fa fa-external-link" aria-hidden="true"></i> Live Demo
+							</a>
+							<a href="https://github.com/sharnee/beautibodega-v0" target="_blank" rel="noopener noreferrer" class="cardBtn">
+								<i class="fa fa-github" aria-hidden="true"></i> GitHub
+							</a>
+						</div>
 					</div>
-				</div>
+				</article>
+
+				<article class="portfolioCard" style="--hue: 50">
+					<div class="cardImageWrapper">
+						<div class="imgBg"></div>
+						<img src="./pictures/draw.PNG" alt="Draw Dot">
+						<div class="cardBadge">Sept, 2022</div>
+					</div>
+
+					<div class="cardBody">
+						<h3 class="cardTitle">Draw Dot</h3>
+
+						<div class="techTags">
+							<span class="tag">JavaScript</span>
+							<span class="tag">HTML5 Canvas</span>
+							<span class="tag">Express</span>
+							<span class="tag">Sequelize</span>
+						</div>
+
+						<p class="cardDesc">
+							A web-based digital drawing and portfolio management application that allows users to create, save, and manage artwork. Developed canvas functionality and integrated database operations to store and manage user artwork and profiles.
+						</p>
+
+						<div class="cardActions">
+							<a href="https://github.com/thomasZimmerman0/backend-project-obtuse-triangle" target="_blank" rel="noopener noreferrer" class="cardBtn" hidden>
+								<i class="fa fa-external-link" aria-hidden="true"></i> Live Demo
+							</a>
+							<a href="https://github.com/thomasZimmerman0/backend-project-obtuse-triangle" target="_blank" rel="noopener noreferrer" class="cardBtn">
+								<i class="fa fa-github" aria-hidden="true"></i> GitHub
+							</a>
+						</div>
+					</div>
+				</article>
+
+				<article class="portfolioCard" style="--hue: 100">
+					<div class="cardImageWrapper">
+						<div class="imgBg"></div>
+						<img src="./pictures/F-End.PNG" alt="Along the Way">
+						<div class="cardBadge">Aug, 2022</div>
+					</div>
+
+					<div class="cardBody">
+						<h3 class="cardTitle">Along The Way</h3>
+
+						<div class="techTags">
+							<span class="tag">JavaScript</span>
+							<span class="tag">Google Maps API</span>
+							<span class="tag">Weather API</span>
+							<span class="tag">CSS3</span>
+						</div>
+
+						<p class="cardDesc">
+							Travel guide application that leverages route calculation, nearby restaurant recommendations, and real-time climate forecasts along your route. The application uses remote API data to populate a list of potential places you might want to visit if you're planning a road trip.
+						</p>
+
+						<div class="cardActions">
+							<a href="https://github.com/scheltemat/front-end-project" target="_blank" rel="noopener noreferrer" class="cardBtn" hidden>
+								<i class="fa fa-external-link" aria-hidden="true"></i> Live Demo
+							</a>
+							<a href="https://github.com/scheltemat/front-end-project" target="_blank" rel="noopener noreferrer" class="cardBtn">
+								<i class="fa fa-github" aria-hidden="true"></i> GitHub
+							</a>
+						</div>
+					</div>
+				</article>
+
 			</div>
-
-			<div class="flipCardContainer col-12 col-md-6 col-xl-4" style="--hue: 50">
-				<div class="flipCard">
-					<div class="cardFront">
-						<figure>
-							<div class="imgBg"></div>
-							<img src="./pictures/draw.PNG" alt="Draw Dot">
-							<figcaption>Draw Dot</figcaption>
-						</figure>
-						<ul>
-							<li>A simple web based portfolio management application that allows users to create and upload drawings to a secure profile with related contacts.</li>
-							<li>This application utilizes JavaScript, CSS, and HTML for the drawing and portfolio functionality and Sequelize to perform CRUD operations. Account passwords are secured using Passport.js and Bcrypt encryption.</li>
-						</ul>
-					</div>
-					<div class="cardBack" aria-hidden="true">
-						<figure>
-							<div class="imgBg"></div>
-							<img src="./pictures/draw.PNG" alt="Draw Dot">
-						</figure>
-						<a href="https://github.com/thomasZimmerman0/backend-project-obtuse-triangle" target="_blank" rel="noopener noreferrer"><button>GitHub</button>
-							<span class="visuallyHidden">(opens in a new tab)</span>
-						</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="flipCardContainer col-12 col-md-6 col-xl-4" style="--hue: 100">
-				<div class="flipCard">
-					<div class="cardFront">
-						<figure>
-							<div class="imgBg"></div>
-							<img src="./pictures/F-End.PNG" alt="Along the Way">
-							<figcaption>Along The Way</figcaption>
-						</figure>
-						<ul>
-							<li>A web-based travel guide application that utilizes Google and weather API to calculate a route, find restaurants and forecast the climate conditions.</li>
-							<li>Developed using JavaScript, HTML and CSS, and leverages the Google Maps, Places and Geocaching APIs.</li>
-						</ul>
-					</div>
-					<div class="cardBack" aria-hidden="true">
-						<figure>
-							<div class="imgBg"></div>
-							<img src="./pictures/F-End.PNG" alt="Along the Way">
-						</figure>
-						<a href="https://github.com/scheltemat/front-end-project" target="_blank" rel="noopener noreferrer"><button>GitHub</button>
-							<span class="visuallyHidden">(opens in a new tab)</span>
-						</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="flipCardContainer col-12 col-md-6 col-xl-4" style="--hue: 150">
-				<div class="flipCard">
-					<div class="cardFront">
-						<figure>
-							<div class="imgBg"></div>
-							<img src="./pictures/bt2.PNG" alt="Billy Talent">
-							<figcaption>Band Page</figcaption>
-						</figure>
-						<ul>
-							<li>A solo project that mimics a band site that features a database for a comment section and has real-time live chat.</li>
-							<li>The project required Socket.IO for live client communication along with Express and EJS for the back-end and database.</li>
-						</ul>
-					</div>
-					<div class="cardBack" aria-hidden="true">
-						<figure>
-							<div class="imgBg"></div>
-							<img src="./pictures/bt2.PNG" alt="Billy Talent">
-						</figure>
-						<a href="https://github.com/Rkovl/BillyTalent" target="_blank" rel="noopener noreferrer"><button>GitHub</button>
-							<span class="visuallyHidden">(opens in a new tab)</span>
-						</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="flipCardContainer col-12 col-md-6 col-xl-4" style="--hue: 200">
-				<div class="flipCard">
-					<div class="cardFront">
-						<figure>
-							<div class="imgBg"></div>
-							<img src="./pictures/GoT.PNG" alt="Game of Thrones houses">
-							<figcaption>Game of Thrones List</figcaption>
-						</figure>
-						<ul>
-							<li>A web-based application that lists all Game of Thrones characters and affiliated houses.</li>
-							<li>This application retrieves a list of Game of Thrones data using async/await from an API, showing every character and letting you browse their associated house.</li>
-						</ul>
-					</div>
-					<div class="cardBack" aria-hidden="true">
-						<figure>
-							<div class="imgBg"></div>
-							<img src="./pictures/GoT.PNG" alt="Game of Thrones houses">
-						</figure>
-						<a href="https://github.com/Rkovl/GoT" target="_blank" rel="noopener noreferrer"><button>GitHub</button>
-							<span class="visuallyHidden">(opens in a new tab)</span>
-						</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="flipCardContainer col-12 col-md-6 col-xl-4" style="--hue: 250">
-				<div class="flipCard">
-					<div class="cardFront">
-						<figure>
-							<div class="imgBg"></div>
-							<img src="./pictures/BlackJack.PNG" alt="Blackjack game">
-							<figcaption>Blackjack Game</figcaption>
-						</figure>
-						<ul>
-							<li>A web-based game that mimics two players and a dealer in a game of blackjack.</li>
-							<li>A purely front-end project that only uses HTML, CSS and JavaScript.</li>
-							<li>You play blackjack with two AI players against a dealer that reacts to the cards in play.</li>
-						</ul>
-					</div>
-					<div class="cardBack" aria-hidden="true">
-						<figure>
-							<div class="imgBg"></div>
-							<img src="./pictures/BlackJack.PNG" alt="Blackjack game">
-						</figure>
-						<a href="https://github.com/Rkovl/blackjack2021" target="_blank" rel="noopener noreferrer"><button>GitHub</button>
-							<span class="visuallyHidden">(opens in a new tab)</span>
-						</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="flipCardContainer col-12 col-md-6 col-xl-4" style="--hue: 300">
-				<div class="flipCard">
-					<div class="cardFront">
-						<figure>
-							<div class="imgBg"></div>
-							<img src="./pictures/restaurant.PNG" alt="Restaurant site">
-							<figcaption>Restaurant</figcaption>
-						</figure>
-						<ul>
-							<li>A simple web-based application that mimics a typical Chinese takeout website.</li>
-							<li>Made with design in mind more so than functionality, as it is entirely built in HTML and CSS.</li>
-							<li>Based on a local location with a visually poor website.</li>
-						</ul>
-					</div>
-					<div class="cardBack" aria-hidden="true">
-						<figure>
-							<div class="imgBg"></div>
-							<img src="./pictures/restaurant.PNG" alt="Restaurant site">
-						</figure>
-						<a href="https://github.com/Rkovl/Restaurant" target="_blank" rel="noopener noreferrer"><button>GitHub</button>
-							<span class="visuallyHidden">(opens in a new tab)</span>
-						</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="flipCardContainer col-12 col-md-6 col-xl-4" style="--hue: 350">
-				<div class="flipCard">
-					<div class="cardFront">
-						<figure>
-							<div class="imgBg"></div>
-							<img src="./pictures/rpg.PNG" alt="Python RPG game">
-							<figcaption>Python RPG Game</figcaption>
-						</figure>
-						<ul>
-							<li>A terminal run Python game that was made to familiarize oneself with object use.</li>
-							<li>The main gameplay loop is you pick between five randomly chosen routes till you fight the boss or die. Your past run then becomes an enemy with all the items you had before, which can be looted after slaying it, making you stronger for the next boss fight.</li>
-						</ul>
-					</div>
-					<div class="cardBack" aria-hidden="true">
-						<figure>
-							<div class="imgBg"></div>
-							<img src="./pictures/rpg.PNG" alt="Python RPG game">
-						</figure>
-						<a href="https://github.com/Rkovl/rpgGame" target="_blank" rel="noopener noreferrer"><button>GitHub</button>
-							<span class="visuallyHidden">(opens in a new tab)</span>
-						</a>
-					</div>
-				</div>
-			</div>
-
 		</div>
 	</section>
 	</main>

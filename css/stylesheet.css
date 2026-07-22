@@ -5,6 +5,7 @@
 :root {
 	--colorWhite: #fff;
 	--colorBlack: #000;
+	--colorRichBlack: #0d1117;
 	--colorTextInverse: whitesmoke;
 	--colorTextMuted: hsla(0, 0%, 100%, 0.6);
 	--colorCard: rgba(255, 255, 255, 0.03);
@@ -14,6 +15,11 @@
 	--shadowSm: 0 5px 10px rgba(0, 0, 0, 0.1);
 	--shadowLg: 20px 20px 50px rgba(0, 0, 0, 0.5);
 	--shadowXl: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+	--colorPopBlue: #4dd0e1;
+	--colorPopGreen: #9ccc65;
+	--colorPopPurple: #ba68c8;
+	--colorPopRed: #ef5350;
+	--colorPopYellow: #fdd835;
 	--fontBody: "Roboto", sans-serif;
 	--fontHeading: "Josefin Sans", sans-serif;
 	--fontMono: "Lucida Console", Monaco, monospace;
@@ -116,7 +122,7 @@ h1.typingDemo {
 	width: 300px;
 	padding: 0 16px;
 	display: flex;
-	border: 1px solid var(--colorWhite);
+	border: 1px solid var(--colorPopBlue);
 	border-radius: 16px;
 }
 
@@ -127,19 +133,21 @@ h1.typingDemo {
 	margin-bottom: 20px;
 	margin-left: 4px;
 	padding: 4px;
-	border-radius: 8px;
+	border-radius: 3px;
+	border-bottom: 1px solid transparent;
 	display: inline-flex;
 	align-items: center;
 	white-space: nowrap;
 	overflow: hidden;
 	cursor: pointer;
 	color: var(--colorWhite);
-	transition: width 300ms ease-in-out 0s, background-color 300ms linear 200ms;
+	transition: width 300ms ease-in-out 0s, background-color 300ms linear 200ms, border-color 300ms linear 200ms;
 }
 
 .iconDiv:hover,
 .iconDiv:focus-visible {
 	width: 145px;
+	border-color: var(--colorPopBlue);
 	background-color: var(--colorBgDark);
 	transition: width 300ms ease-in-out 0s, background-color 100ms linear 0s;
 }
@@ -172,7 +180,7 @@ h1.typingDemo {
 	width: 1px;
 	height: 36px;
 	margin: 24px 18px;
-	background-color: var(--colorWhite);
+	background-color: var(--colorPopYellow);
 }
 
 .visuallyHidden {
@@ -203,7 +211,7 @@ h1.typingDemo {
 	background-color: var(--colorBgDark);
 }
 
-.pageSection--alt {
+.pageSectionAlt {
 	background-color: var(--colorBgMid);
 }
 
@@ -244,7 +252,7 @@ h1.typingDemo {
 	z-index: 10;
 }
 
-.navContainer--scrolled {
+.navContainerScrolled {
 	position: fixed;
 	top: 0;
 }
@@ -338,27 +346,23 @@ code,
 
 .card .operator,
 .card .boolean {
-	color: #4dd0e1;
+	color: var(--colorPopBlue);
 }
 
 .card .string {
-	color: #9ccc65;
+	color: var(--colorPopGreen);
 }
 
 .card .variable {
-	color: #ba68c8;
+	color: var(--colorPopPurple);
 }
 
 .card .property {
-	color: #ef5350;
-}
-
-.card .method {
-	color: #29b6f6;
+	color: var(--colorPopRed);
 }
 
 .card .function {
-	color: #fdd835;
+	color: var(--colorPopYellow);
 }
 
 /* ==========================================================================
@@ -387,8 +391,8 @@ code,
 	margin: 0;
 	position: relative;
 	border-radius: 0.5rem;
-	border: 2px solid var(--colorWhite);
-	background-color: var(--colorBgDark);
+	border: 2px solid var(--colorPopYellow);
+	background-color: transparent;
 	box-shadow: var(--shadowSm);
 }
 
@@ -398,184 +402,136 @@ code,
 }
 
 /* ==========================================================================
-   Portfolio flip cards
+   Portfolio Grid & Matching Theme Cards
    ========================================================================== */
 
-.flipCardContainer {
-	--hue: 150;
-	--primary: hsl(var(--hue), 50%, 50%);
-	--white1: hsl(0, 0%, 95%);
-	--white2: hsl(0, 0%, 80%);
-	--dark: hsl(var(--hue), 25%, 10%);
-	--grey: hsl(0, 0%, 50%);
-
-	width: 310px;
-	height: 500px;
-	margin: 40px;
-	perspective: 1000px;
-}
-
-.flipCard {
-	width: inherit;
-	height: inherit;
-	position: relative;
-	transform-style: preserve-3d;
-	transition: 0.6s 0.1s;
-}
-
-.flipCardContainer:hover .flipCard,
-.flipCardContainer:focus-within .flipCard,
-.flipCardContainer:active .flipCard {
-	transform: rotateY(180deg);
-}
-
-.flipCardContainer:active .flipCard {
-	transition: 0s;
-}
-
-.cardFront,
-.cardBack {
+.projectsGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
 	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	overflow: hidden;
-	border-radius: 24px;
-	outline: solid var(--colorWhite);
-	background: var(--dark);
-	backface-visibility: hidden;
-}
-
-.cardFront {
-	transform: rotateY(0deg);
-	z-index: 2;
-}
-
-.cardBack {
-	transform: rotateY(180deg);
-	z-index: 1;
-}
-
-.flipCardContainer figure,
-.flipCardContainer .imgBg {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-
-.flipCardContainer figure {
-	z-index: -1;
-}
-
-.flipCardContainer img {
-	height: 100%;
-	border-radius: 24px;
-}
-
-.flipCardContainer figcaption {
-	position: absolute;
-	top: 0;
-	right: 12px;
-	margin-top: 12%;
-	padding: 8px 22px;
-	width: auto;
-	color: var(--white1);
-	font-weight: bold;
-	line-height: 1.6;
-	letter-spacing: 2px;
-	word-spacing: 6px;
-	text-align: right;
-	background: hsla(var(--hue), 25%, 10%, 0.5);
-}
-
-.imgBg {
-	background: hsla(var(--hue), 50%, 10%, 0.9);
-}
-
-.cardFront .imgBg {
-	clip-path: polygon(0 20%, 100% 40%, 100% 100%, 0 100%);
-}
-
-.cardFront .imgBg::before {
-	content: "";
-	position: absolute;
-	top: 34%;
-	left: 50%;
-	transform: translate(-50%, -50%) rotate(18deg);
-	width: 100%;
-	height: 6px;
-	border: 1px solid var(--primary);
-	border-left-color: transparent;
-	border-right-color: transparent;
-	transition: 0.1s;
-}
-
-.cardBack .imgBg {
-	clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
-}
-
-.flipCardContainer:hover .cardFront .imgBg::before {
-	width: 6px;
-	border-left-color: var(--primary);
-	border-right-color: var(--primary);
-}
-
-.flipCard ul {
-	width: 70%;
-	height: 100%;
+	max-width: 1400px;
 	margin: 0 auto;
-	padding-top: 50%;
+}
+
+.portfolioCard {
+	background: var(--colorRichBlack);
+	border: 2px solid var(--colorWhite);
+	border-radius: 10px;
+	overflow: hidden;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	list-style: none;
-	color: var(--white1);
+	text-align: left;
+	box-shadow: var(--shadowLg);
+	transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.flipCard li {
-	width: 100%;
-	margin-top: 12px;
-	padding-bottom: 12px;
+.portfolioCard:hover {
+	transform: translateY(-10px);
+	border-color: var(--colorPopPurple);
+}
+
+.cardImageWrapper {
 	position: relative;
-	border-bottom: 1px solid var(--colorWhite);
-	font-size: 14px;
-	text-align: center;
-	text-shadow:
-		-1px -1px 0 var(--colorBlack),
-		1px -1px 0 var(--colorBlack),
-		-1px 1px 0 var(--colorBlack),
-		1px 1px 0 var(--colorBlack);
+	width: 100%;
+	height: 180px;
+	overflow: hidden;
 }
 
-.cardBack button {
-	padding: 9px 20px;
-	border: 1px solid var(--grey);
-	border-radius: 1000px;
-	background: transparent;
-	color: var(--white1);
-	font-family: inherit;
+.cardImageWrapper img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: top;
+	transition: transform 0.3s ease;
+}
+
+.portfolioCard:hover .cardImageWrapper img {
+	transform: scale(1.1);
+}
+
+.cardBadge {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	background: var(--colorRichBlack);
+	border: 2px solid var(--colorPopRed);
+	color: var(--colorWhite);
+	font-size: 0.72rem;
 	font-weight: bold;
-	letter-spacing: 2px;
-	cursor: pointer;
-	transition: 0.3s;
+	letter-spacing: 1px;
+	padding: 4px 10px;
+	border-radius: 20px;
+	text-transform: uppercase;
 }
 
-.cardBack button:hover,
-.cardBack button:focus {
-	color: var(--primary);
-	border-color: currentColor;
-	background: hsla(var(--hue), 25%, 10%, 0.2);
+.cardBody {
+	padding: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
 }
 
-.cardBack button:active {
-	transform: translate(2px);
+.cardTitle {
+	color: var(--colorWhite);
+	font-family: var(--fontHeading);
+	font-size: 1.4rem;
+	letter-spacing: 1px;
+	margin-bottom: 0.75rem;
+}
+
+.techTags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	margin-bottom: 1rem;
+}
+
+.tag {
+	background-color: var(--colorBgMid);
+	border: 1px solid var(--colorTextMuted);
+	color: var(--colorWhite);
+	font-family: var(--fontMono);
+	font-size: 0.75rem;
+	padding: 3px 8px;
+	border-radius: 4px;
+}
+
+.cardDesc {
+	color: var(--colorTextInverse);
+	font-size: 0.9rem;
+	line-height: 1.5;
+	margin-bottom: 1.5rem;
+	flex-grow: 1;
+}
+
+.cardActions {
+	display: flex;
+	gap: 0.75rem;
+	margin-top: auto;
+}
+
+.cardBtn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.4rem;
+	flex: 1;
+	padding: 8px 12px;
+	font-size: 0.85rem;
+	font-weight: bold;
+	letter-spacing: 1px;
+	color: var(--colorWhite);
+	border: 1px solid var(--colorPopBlue);
+	border-radius: 1000px;
+	background: var(--colorBgDark);
+	transition: all 0.2s ease;
+}
+
+.cardBtn:hover {
+	color: var(--colorRichBlack);
+	background: var(--colorPopGreen);
+	border-color: var(--colorWhite);
 }
 
 /* ==========================================================================
@@ -640,16 +596,17 @@ code,
 		transition: none;
 	}
 
-	.flipCard,
-	.flipCardContainer:hover .flipCard,
-	.flipCardContainer:focus-within .flipCard,
-	.flipCardContainer:active .flipCard {
+	.portfolioCard,
+	.cardImageWrapper img,
+	.cardBtn {
 		transition: none;
 	}
 
-	.navTab,
-	.cardAboutMe,
-	.cardBack button {
-		transition: none;
+	.portfolioCard:hover {
+		transform: none;
+	}
+
+	.portfolioCard:hover .cardImageWrapper img {
+		transform: none;
 	}
 }

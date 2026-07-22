@@ -3,9 +3,9 @@ const stickyOffset = navBar.offsetTop;
 
 function updateNavOnScroll() {
 	if (window.pageYOffset >= stickyOffset) {
-		navBar.classList.add("navContainer--scrolled");
+		navBar.classList.add("navContainerScrolled");
 	} else {
-		navBar.classList.remove("navContainer--scrolled");
+		navBar.classList.remove("navContainerScrolled");
 	}
 }
 
